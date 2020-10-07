@@ -81,6 +81,7 @@ def crop_region(I,label,bg=0.5):
 
 	outsize = (outwh[1],outwh[0],ch) if ch > 1 else (outwh[1],outwh[0])
 	if (np.array(outsize) < 0).any():
+		from signal import pause
 		pause()
 	Iout  = np.zeros(outsize,dtype=I.dtype) + bg
 
